@@ -1,0 +1,30 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+
+<form method="post" action="/login?next=/admin">
+    {% if current_user.is_authenticated: %}
+
+    <h2 class="text text-center">QUẢN TRỊ HỆ THỐNG</h2>
+    <h3>Chào {{ current_user.username }}!!!</h3>
+
+    {%else%}
+
+    <h2 class="text text-center">ĐĂNG NHẬP</h2>
+  <!-- Email input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form1Example1">Username</label>
+    <input type="input" placeholder="username" class="form-control" name="username" required/>
+  </div>
+  <!-- Password input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form1Example2">Password</label>
+    <input type="password" placeholder="password" class="form-control" name="password" required/>
+  </div>
+  <!-- Submit button -->
+  <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block">Sign in</button>
+</form>
+    {% endif %}
+
+{% endblock %}
+
+
