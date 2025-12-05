@@ -5,4 +5,39 @@
 
     <h2 class="text text-center pt-3">ĐĂNG KÝ</h2>
 
+    {% if error: %}
+        <div class="alert alert-danger text-center m-3">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" action="/register?next=/login" enctype="multipart/form-data">
+    <!-- Fullname input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label">Fullname</label>
+        <input type="input" placeholder="Fullname" class="form-control" name="fullname" required/>
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label>Avatar</label>
+        <input type="file" class="form-control" name="avatar"/>
+    </div>
+    
+    <!-- Username input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label">Username</label>
+        <input type="input" placeholder="Username" class="form-control" name="username" required/>
+    </div>
+    <!-- Password input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label">Password</label>
+        <input type="password" placeholder="Password" class="form-control" name="password" required/>
+    </div>
+    <!-- Confirm Password input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label">Confirm</label>
+        <input type="password" placeholder="Confirm password" class="form-control" name="confirm" required/>
+    </div>
+    <!-- Submit button -->
+    <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block">Register</button>
+</form>
+
 {% endblock%}

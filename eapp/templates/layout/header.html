@@ -36,6 +36,9 @@
                     <a class="nav-link text-info" href="/register">Đăng ký</a>
                 </li>
                 {% endif %}
+                  <li class="nav-item">
+                    <a class="nav-link text-info" href="/cart">&#128722;<span class="cart-counter">{{ cart_stats.total_quantity }}</span></a>
+                </li>
 
         </ul>   
       <form class="d-flex" action="/" method="get">
